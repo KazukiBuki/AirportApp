@@ -15,46 +15,36 @@
     <div class="container-fluid mt-3">
 
     
-
-        <div class="d-flex justify-content-center">
-        <a class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airport</a>
+        <div class="btn-group d-flex justify-content-center" role="group">
+        <div>
+        <a class=" btn btn-danger" style="margin-top: 6px; margin-right: 3px;">New country</a>
         </div>
-    
-      <div class="form-group nav d-flex justify-content-center col-sm-12" style="margin-top: 13px;">
-        <select class="form-control" id="country">
-          <option>Search by country</option>
-          <option>Lithuania</option>
-          <option>Scotland</option>
-          <option>United Kingdom</option>
-        </select>
-      </div>
 
-      <div class="d-flex justify-content-center">
-        <a class="d-flex justify-content-center btn btn-warning" style="margin-top: 13px;">Search</a>
+        <div>
+        <a class=" btn btn-danger" style="margin-top: 6px;">Country without airlines</a>
+        </div>
+
+        <div>
+        <a class=" btn btn-danger" style="margin-top: 6px; margin-left: 3px;">Country without airlines and airports</a>
+        </div>
         </div>
 
         <div class="table" style="margin-top: 13px;">
-        <table class="table table-bordered bg-warning">
+        <table class="table table-bordered bg-info">
            <thead>
              <tr>
                <th scope="col">Name</th>
-               <th scope="col">Country</th>
-               <th scope="col">Location</th>
-               <th scope="col">Airlines</th>
+               <th scope="col">Code</th>
                <th scope="col">Actions</th>
              </tr>
            </thead>
            <tbody>
              <tr>
                <th scope="row">Brexit</th>
-               <td>United Kingdom</td>
-               <td>Walter</td>
-               <td>Sample Text</td>
+               <td>1234</td>
                <td>
-                 <a class="btn btn-primary">Edit</a>
-                 <a href="/add_airline" class="btn btn-info">Add airline</a>
-                 <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
-                 <a href="/delete_airport" class="btn btn-danger">Delete</a>
+                 <a class="btn btn-danger">Edit</a>
+                 <a href="/delete_country" class="btn btn-warning">Delete</a>
                </td>
              </tr>
            </tbody>
