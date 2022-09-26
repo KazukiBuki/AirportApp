@@ -18,11 +18,11 @@
 </div>
     <div class="btn-group d-flex justify-content-center" role="group">
         <div>
-        <a href="/test" class="btn btn-success" style="margin-top: 6px; margin-right: 3px;">Yes</a>
+        <a href="/airlines" class="btn btn-success" style="margin-top: 6px; margin-right: 3px;">Yes</a>
         </div>
 
         <div>
-        <a href="/test" class="btn btn-danger" style="margin-top: 6px;">No</a>
+        <a href="/airlines" class="btn btn-danger" style="margin-top: 6px;">No</a>
         </div>
 
         </div>

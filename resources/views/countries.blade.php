@@ -17,15 +17,15 @@
     
         <div class="btn-group d-flex justify-content-center" role="group">
         <div>
-        <a class=" btn btn-danger" style="margin-top: 6px; margin-right: 3px;">New country</a>
+        <a href="/add_country" class="btn btn-danger" style="margin-top: 6px; margin-right: 3px;">New country</a>
         </div>
 
         <div>
-        <a class=" btn btn-danger" style="margin-top: 6px;">Country without airlines</a>
+        <a href="/countries_without_airlines" class="btn btn-danger" style="margin-top: 6px;">Country without airlines</a>
         </div>
 
         <div>
-        <a class=" btn btn-danger" style="margin-top: 6px; margin-left: 3px;">Country without airlines and airports</a>
+        <a href="/countries_w_airlines_airports" class="btn btn-danger" style="margin-top: 6px; margin-left: 3px;">Country without airlines and airports</a>
         </div>
         </div>
 
@@ -43,7 +43,7 @@
                <th scope="row">Brexit</th>
                <td>1234</td>
                <td>
-                 <a class="btn btn-danger">Edit</a>
+                 <a href="/edit_country" class="btn btn-danger">Edit</a>
                  <a href="/delete_country" class="btn btn-warning">Delete</a>
                </td>
              </tr>

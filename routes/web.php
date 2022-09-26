@@ -27,6 +27,9 @@ Route::get('/airlines', function () {
 Route::get('/countries', function () {
     return view('countries');
 });
+Route::get('/add_country', function () {
+    return view('add_country');
+});
 Route::get('/edit_country', function () {
     return view('edit_country');
 });
@@ -35,8 +38,11 @@ Route::get('/delete_country', function () {
 });
 
 
+Route::get('/add_airport', function () {
+    return view('add_airport');
+});
 Route::get('/edit_airport', function () {
-    return view('delete_airport');
+    return view('edit_airport');
 });
 Route::get('/delete_airport', function () {
     return view('delete_airport');
@@ -57,4 +63,15 @@ Route::get('/delete_airline', function () {
 });
 Route::get('/remove_airline', function () {
     return view('remove_airline');
+});
+Route::get('/new_airline', function () {
+    return view('new_airline');
+});
+
+
+Route::get('/countries_without_airlines', function () {
+    return view('countries_without_airlines');
+});
+Route::get('/countries_w_airlines_airports', function () {
+    return view('countries_w_airlines_airports');
 });

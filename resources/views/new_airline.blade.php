@@ -12,34 +12,29 @@
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
     
-    <div class="container">
+    <div class="container-fluid mt-3">
+        <div class="text-center">
+  <h1>Let's add a new airline!</h1>
+</div>
 
-    
+<form action="" method="post">
+  <input type="hidden" name="_token">  <div class="mb-3">
+    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
+      <option selected="">Name</option>
+          </select>
+  </div>
+</form>
 
-        <div class="d-flex justify-content-center">
-        <a href="new_airline" class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airline</a>
-        </div>
+<form action="" method="post">
+  <input type="hidden" name="_token">  <div class="mb-3">
+    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
+      <option selected="">Select country</option>
+      <option>Lithuania</option>
+          </select>
+  </div>
+  <a href="/airlines" type="submit" class="btn btn-success">Create</a>
+</form>
 
-        <div class="table" style="margin-top: 13px;">
-        <table class="table table-bordered bg-info">
-           <thead>
-             <tr>
-               <th scope="col">Name</th>
-               <th scope="col">Country</th>
-               <th scope="col">Actions</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <th scope="row">Brexit</th>
-               <td>United Kingdom</td>
-               <td>
-                 <a href="edit_airline" class="btn btn-danger">Edit</a>
-                 <a href="delete_airline" class="btn btn-warning">Delete</a>
-               </td>
-             </tr>
-           </tbody>
-        </table>
       </div>
 </body>
 </html>

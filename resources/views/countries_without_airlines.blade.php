@@ -12,33 +12,18 @@
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
     
-    <div class="container">
-
-    
-
-        <div class="d-flex justify-content-center">
-        <a href="new_airline" class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airline</a>
-        </div>
-
+    <div class="container-fluid mt-3">
         <div class="table" style="margin-top: 13px;">
-        <table class="table table-bordered bg-info">
+        <table class="table table-bordered bg-warning">
            <thead>
              <tr>
                <th scope="col">Name</th>
                <th scope="col">Country</th>
+               <th scope="col">Location</th>
+               <th scope="col">Airlines</th>
                <th scope="col">Actions</th>
              </tr>
            </thead>
-           <tbody>
-             <tr>
-               <th scope="row">Brexit</th>
-               <td>United Kingdom</td>
-               <td>
-                 <a href="edit_airline" class="btn btn-danger">Edit</a>
-                 <a href="delete_airline" class="btn btn-warning">Delete</a>
-               </td>
-             </tr>
-           </tbody>
         </table>
       </div>
 </body>

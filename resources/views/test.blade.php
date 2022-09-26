@@ -17,7 +17,7 @@
     
 
         <div class="d-flex justify-content-center">
-        <a class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airport</a>
+        <a href="/add_airport" class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airport</a>
         </div>
     
       <div class="form-group nav d-flex justify-content-center col-sm-12" style="margin-top: 13px;">
@@ -30,7 +30,7 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <a class="d-flex justify-content-center btn btn-warning" style="margin-top: 13px;">Search</a>
+        <a href="/test" class="d-flex justify-content-center btn btn-warning" style="margin-top: 13px;">Search</a>
         </div>
 
         <div class="table" style="margin-top: 13px;">
@@ -51,7 +51,7 @@
                <td>Walter</td>
                <td>Sample Text</td>
                <td>
-                 <a class="btn btn-primary">Edit</a>
+                 <a href="/edit_airport" class="btn btn-primary">Edit</a>
                  <a href="/add_airline" class="btn btn-info">Add airline</a>
                  <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
                  <a href="/delete_airport" class="btn btn-danger">Delete</a>
