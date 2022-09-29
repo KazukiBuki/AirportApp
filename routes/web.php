@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AirportController;
+use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\CountryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,19 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/test', function () {
     return view('test');
 });
-Route::get('/airlines', function () {
-    return view('airlines');
-});
+Route::get('/test',  [AirportController::class, 'index']);
+Route::get('/airlines', [AirlineController::class, 'index']);
+Route::get('/countries', [CountryController::class, 'index']);
 
-
-Route::get('/countries', function () {
-    return view('countries');
-});
 Route::get('/add_country', function () {
     return view('add_country');
 });
