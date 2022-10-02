@@ -25,7 +25,7 @@ class AirlineController extends Controller
      */
     public function create()
     {
-        //
+        return view('add_airline');
     }
 
     /**

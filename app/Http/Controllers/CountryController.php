@@ -25,7 +25,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        //
+        return view('add_country');
     }
 
     /**
