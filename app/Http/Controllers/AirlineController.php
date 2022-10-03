@@ -58,7 +58,7 @@ class AirlineController extends Controller
      */
     public function edit(Airline $airline)
     {
-        //
+        return view('edit_airline');
     }
 
     /**
@@ -81,6 +81,6 @@ class AirlineController extends Controller
      */
     public function destroy(Airline $airline)
     {
-        //
+        return view('delete_airline');
     }
 }

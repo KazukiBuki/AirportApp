@@ -58,7 +58,7 @@ class CountryController extends Controller
      */
     public function edit(Country $country)
     {
-        //
+        return view('edit_country');
     }
 
     /**
@@ -81,6 +81,6 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        //
+        return view('delete_country');
     }
 }
