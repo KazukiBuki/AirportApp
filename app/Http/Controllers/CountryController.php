@@ -18,6 +18,17 @@ class CountryController extends Controller
         return view('countries');
     }
 
+    public function countryWithoutAirlinesAirports(){
+        $country = Country::paginate('6');
+
+        return view('country_w_airlines_airports', compact('country'));
+    }
+
+    public function countryWithoutAirline(){
+        $country = Country::paginate('6');
+
+        return view('countries_without_airlines', compact('country'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +47,17 @@ class CountryController extends Controller
      */
     public function store(StoreCountryRequest $request)
     {
-        //
+        $validate = $request -> validate([
+            'country_name' => 'required|unique:countries|min:4|max:50',
+            'country_ISO' => 'required|unique:countries|min:3|max:3',
+        ]);
+
+        Country::create([
+            'country_name' => request('country_name'),
+            'country_ISO' => request('country_ISO'),
+        ]);
+
+        return redirect('/countries');
     }
 
     /**
@@ -47,7 +68,9 @@ class CountryController extends Controller
      */
     public function show(Country $country)
     {
-        //
+        $country = Country::paginate('6');
+
+        return view('countries', compact('country'));
     }
 
     /**
@@ -58,7 +81,7 @@ class CountryController extends Controller
      */
     public function edit(Country $country)
     {
-        return view('edit_country');
+        return view('edit_country', compact('country'));
     }
 
     /**
@@ -70,7 +93,8 @@ class CountryController extends Controller
      */
     public function update(UpdateCountryRequest $request, Country $country)
     {
-        //
+        Country::where('id', $country -> id)-> update($request->only(['country_name', 'country_ISO']));
+        return redirect('/countries');
     }
 
     /**
@@ -81,6 +105,7 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        return view('delete_country');
+        $country -> delete();
+        return redirect('/country');
     }
 }

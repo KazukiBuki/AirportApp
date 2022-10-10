@@ -25,7 +25,9 @@ class AirlineController extends Controller
      */
     public function create()
     {
-        return view('add_airline');
+        $country = Country::All();
+
+        return view('add_airline', compact('country'));
     }
 
     /**
@@ -36,7 +38,30 @@ class AirlineController extends Controller
      */
     public function store(StoreAirlineRequest $request)
     {
-        //
+
+        $validate = $request -> validate([
+            'airline_name' => 'required|max:40',
+            'country_name' => 'required',
+            'country_ISO' => 'required',
+            'country_id' => 'required',
+        ]);
+
+
+        if (Country::where('id', '=', request('country_id') )->exists() )
+        {
+            Airline::create([
+                'airline_name' => request('airline_name'),
+                'country_name' => request('country_name'),
+                'country_ISO' => request('country_ISO'),
+                'country_id' => request('country_id'),
+            ]);
+
+        } 
+        else{
+            return view('denied');
+        }
+
+        return redirect('/airlines');
     }
 
     /**
@@ -47,7 +72,7 @@ class AirlineController extends Controller
      */
     public function show(Airline $airline)
     {
-        //
+        return view('airlines', compact('airline'));
     }
 
     /**
@@ -58,7 +83,9 @@ class AirlineController extends Controller
      */
     public function edit(Airline $airline)
     {
-        return view('edit_airline');
+        $country = Country::All();
+       
+        return view('edit_airline', compact('airline', 'country'));
     }
 
     /**
@@ -70,7 +97,9 @@ class AirlineController extends Controller
      */
     public function update(UpdateAirlineRequest $request, Airline $airline)
     {
-        //
+        Airline::where('id', $airline -> id)-> update($request->only(['airline_name', 'country_name', 'country_ISO']));
+       
+        return redirect('/airlines');
     }
 
     /**
@@ -81,6 +110,6 @@ class AirlineController extends Controller
      */
     public function destroy(Airline $airline)
     {
-        return view('delete_airline');
+        return view('/airlines');
     }
 }

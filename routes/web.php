@@ -72,3 +72,7 @@ Route::get('/countries_without_airlines', function () {
 Route::get('/countries_w_airlines_airports', function () {
     return view('countries_w_airlines_airports');
 });
+
+Route::get('/denied', function () {
+    return view('denied');
+});
