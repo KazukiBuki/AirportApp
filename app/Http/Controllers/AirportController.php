@@ -18,6 +18,7 @@ class AirportController extends Controller
         return view('test');
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *

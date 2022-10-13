@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Airline;
+use App\Models\Country;
 use App\Http\Requests\StoreAirlineRequest;
 use App\Http\Requests\UpdateAirlineRequest;
 
@@ -17,6 +18,11 @@ class AirlineController extends Controller
     {
         return view('airlines');
     }
+
+    // public function addAirline()
+    // {
+    //     return view('add_airline');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -56,7 +62,7 @@ class AirlineController extends Controller
                 'country_id' => request('country_id'),
             ]);
 
-        } 
+        }
         else{
             return view('denied');
         }
@@ -84,7 +90,7 @@ class AirlineController extends Controller
     public function edit(Airline $airline)
     {
         $country = Country::All();
-       
+
         return view('edit_airline', compact('airline', 'country'));
     }
 
@@ -98,7 +104,7 @@ class AirlineController extends Controller
     public function update(UpdateAirlineRequest $request, Airline $airline)
     {
         Airline::where('id', $airline -> id)-> update($request->only(['airline_name', 'country_name', 'country_ISO']));
-       
+
         return redirect('/airlines');
     }
 
