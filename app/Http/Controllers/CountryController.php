@@ -48,8 +48,8 @@ class CountryController extends Controller
     public function store(StoreCountryRequest $request)
     {
         $validate = $request -> validate([
-            'country_name' => 'required|unique:countries|min:4|max:50',
-            'country_ISO' => 'required|unique:countries|min:3|max:3',
+            'country_name' => 'required|min:4|max:50',
+            'country_ISO' => 'required|min:3|max:3',
         ]);
 
         Country::create([
@@ -106,6 +106,6 @@ class CountryController extends Controller
     public function destroy(Country $country)
     {
         $country -> delete();
-        return redirect('/country');
+        return redirect('/countries');
     }
 }

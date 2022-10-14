@@ -11,31 +11,25 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
         <div class="text-center">
   <h1>Let's add a country!</h1>
 </div>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Name</option>
-      <option selected="">Lithuania</option>
-          </select>
-  </div>
-</form>
+  <form action="/store_country" method="post">
+    @csrf
+    <div class="mb-3">
+      <label for="country_name" class="form-label">Name</label>
+      <input name="country_name" type="text" class="form-control" id="country_name" aria-describedby="textHelp">
+    </div>
+    <div class="mb-3">
+      <label for="country_ISO" class="form-label">ISO code</label>
+      <input name="country_ISO" type="text" class="form-control" id="country_ISO">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">ISO Code</option>
-      <option>1234</option>
-          </select>
-  </div>
-  <a href="/countries" type="submit" class="btn btn-success">Submit</a>
-</form>
-
-      </div>
+    </div>
 </body>
 </html>

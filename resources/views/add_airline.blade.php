@@ -11,29 +11,24 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
         <div class="text-center">
   <h1>Let's add an airline to a airport!</h1>
 </div>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Name</option>
-          </select>
-  </div>
-</form>
-
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Select airline</option>
-      <option>Lithuania</option>
-          </select>
-  </div>
-  <a href="/test" type="submit" class="btn btn-success">Link</a>
-</form>
+<form action="/store_airline" method="post">
+    @csrf
+    <div class="mb-3">
+      <label for="airline_name" class="form-label">Name</label>
+      <input name="airline_name" type="text" class="form-control" id="airline_name" aria-describedby="textHelp">
+    </div>
+    <div class="mb-3">
+        <label for="country_name" class="form-label">Country</label>
+      <input name="country_name" type="text" class="form-control" id="country_name">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
 
       </div>
 </body>

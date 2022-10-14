@@ -13,14 +13,14 @@ class CreateAirportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('test', function (Blueprint $table) {
+        Schema::create('airports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
+            $table->string('airport_name');
             $table->string('country_name');
             $table->decimal('latitude');
             $table->decimal('longitude');
-            $table->foreignId('country_id');
+            // $table->foreignId('country_id');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateAirportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test');
+        Schema::dropIfExists('airports');
     }
 }

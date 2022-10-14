@@ -9,5 +9,5 @@ class Airline extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'country'];
+    protected $fillable = ['airline_name', 'country_name'];
 }

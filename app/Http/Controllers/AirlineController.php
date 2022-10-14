@@ -19,10 +19,10 @@ class AirlineController extends Controller
         return view('airlines');
     }
 
-    // public function addAirline()
-    // {
-    //     return view('add_airline');
-    // }
+    public function addAirline()
+     {
+         return view('add_airline');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -33,7 +33,7 @@ class AirlineController extends Controller
     {
         $country = Country::All();
 
-        return view('add_airline', compact('country'));
+        return view('new_airline', compact('country'));
     }
 
     /**
