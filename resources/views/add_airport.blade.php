@@ -27,6 +27,14 @@
         <label for="country_name" class="form-label">Country</label>
       <input name="country_name" type="text" class="form-control" id="country_name">
     </div>
+    <div class="mb-3">
+        <label for="latitude" class="form-label">Latitude</label>
+        <input name="latitude" type="number" class="form-control" id="latitude" aria-describedby="textHelp">
+      </div>
+      <div class="mb-3">
+        <label for="longitude" class="form-label">Longitude</label>
+        <input name="longitude" type="number" class="form-control" id="longitude" aria-describedby="textHelp">
+      </div>
     <button type="submit" class="btn btn-primary">Create</button>
   </form>
 

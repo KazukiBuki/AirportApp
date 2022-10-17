@@ -17,26 +17,24 @@ use App\Http\Controllers\CountryController;
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
+Route::get('/', [AirportController::class, 'redirecting']);
 Route::get('/test',  [AirportController::class, 'index']);
 Route::get('/add_airport', [AirportController::class, 'create']);
-Route::get('/edit_airport', [AirportController::class, 'edit']);
-Route::get('/delete_airport', [AirportController::class, 'destroy']);
+Route::get('/edit_airport/{airport}', [AirportController::class, 'edit']);
+Route::get('/delete_airport/{airport}', [AirportController::class, 'destroy']);
 Route::post('/store_airport', [AirportController::class, 'store']);
 
 Route::get('/airlines', [AirlineController::class, 'index']);
 Route::get('/add_airline', [AirlineController::class, 'addAirline']);
-Route::get('/edit_airline', [AirlineController::class, 'edit']);
-Route::get('/delete_airline', [AirlineController::class, 'destroy']);
+Route::get('/edit_airline/{airline}', [AirlineController::class, 'edit']);
+Route::get('/delete_airline/{airline}', [AirlineController::class, 'destroy']);
 Route::post('/store_airline', [AirlineController::class, 'store']);
 Route::get('/new_airline', [AirlineController::class, 'create']);
 
 Route::get('/countries', [CountryController::class, 'index']);
 Route::get('/add_country', [CountryController::class, 'create']);
-Route::get('/edit_country', [CountryController::class, 'edit']);
-Route::get('/delete_country', [CountryController::class, 'destroy']);
+Route::get('/edit_country/{country}', [CountryController::class, 'edit']);
+Route::get('/delete_country/{country}', [CountryController::class, 'destroy']);
 Route::post('/store_country', [CountryController::class, 'store']);
 
 // Route::get('/add_country', function () {

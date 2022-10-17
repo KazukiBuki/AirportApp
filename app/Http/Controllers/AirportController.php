@@ -9,6 +9,10 @@ use App\Models\Country;
 
 class AirportController extends Controller
 {
+
+    public function redirecting(){
+        return redirect('test');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +20,9 @@ class AirportController extends Controller
      */
     public function index()
     {
-        return view('test');
+        $airport = Airport::paginate('6');
+
+        return view('test', compact('airport'));
     }
 
 
@@ -43,7 +49,7 @@ class AirportController extends Controller
         //$fileName = NULL;
 
         $validate = $request-> validate([
-            'airport_name' => 'required|min:4|max:40',
+            'airport_name' => 'required|max:40',
             'country_name' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
@@ -110,9 +116,9 @@ class AirportController extends Controller
      * @param  \App\Models\AirportCont  $airport
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AirportCont $airport)
+    public function destroy(Airport $airport)
     {
-        $airportCont -> delete();
+        $airport -> delete();
         return redirect('/');
     }
 }

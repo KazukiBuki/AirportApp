@@ -15,7 +15,7 @@ services:
     command: ''
     container_name: ddev-Vejas-db
     environment:
-      COLUMNS: '208'
+      COLUMNS: '194'
       DDEV_HOSTNAME: vejas.ddev.site
       DDEV_PHP_VERSION: '7.4'
       DDEV_PRIMARY_URL: http://vejas.ddev.site
@@ -28,7 +28,7 @@ services:
       DOCKER_IP: 127.0.0.1
       HOST_DOCKER_INTERNAL_IP: 172.17.0.1
       IS_DDEV_PROJECT: "true"
-      LINES: '17'
+      LINES: '20'
       TZ: ''
     healthcheck:
       interval: 1s
@@ -43,7 +43,7 @@ services:
       com.ddev.platform: ddev
       com.ddev.site-name: Vejas
     ports:
-    - 127.0.0.1:0:3306/tcp
+    - 127.0.0.1::3306/tcp
     restart: "no"
     stop_grace_period: 60s
     user: 1001:1002
@@ -96,7 +96,7 @@ services:
     - SYS_PTRACE
     container_name: ddev-Vejas-web
     environment:
-      COLUMNS: '208'
+      COLUMNS: '194'
       DDEV_DOCROOT: public
       DDEV_HOSTNAME: vejas.ddev.site
       DDEV_PHP_VERSION: '7.4'
@@ -118,7 +118,7 @@ services:
       HTTPS_EXPOSE: 443:80,8026:8025
       HTTP_EXPOSE: 80:80,8025:8025
       IS_DDEV_PROJECT: "true"
-      LINES: '17'
+      LINES: '20'
       SSH_AUTH_SOCK: /home/.ssh-agent/socket
       TZ: ''
       VIRTUAL_HOST: vejas.ddev.site

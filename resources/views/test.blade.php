@@ -11,15 +11,15 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
 
-    
+
 
         <div class="d-flex justify-content-center">
         <a href="/add_airport" class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airport</a>
         </div>
-    
+
       <div class="form-group nav d-flex justify-content-center col-sm-12" style="margin-top: 13px;">
         <select class="form-control" id="country">
           <option>Search by country</option>
@@ -45,20 +45,42 @@
              </tr>
            </thead>
            <tbody>
+            @foreach ( $airport as $airports )
              <tr>
-               <th scope="row">Brexit</th>
-               <td>United Kingdom</td>
-               <td>Walter</td>
-               <td>Sample Text</td>
+               <th scope="row">{{ $airports -> id }}</th>
+               <td>{{ $airports -> airport_name }}</td>
+               <td>{{ $airports -> country_name }}</td>
+               <td>{{ $airports -> latitude }}</td>
+               <td>{{ $airports -> longitude }}</td>
                <td>
-                 <a href="/edit_airport" class="btn btn-primary">Edit</a>
+                 <a href="/edit_airport/{{ $airports -> id }}" class="btn btn-primary">Edit</a>
                  <a href="/add_airline" class="btn btn-info">Add airline</a>
                  <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
-                 <a href="/delete_airport" class="btn btn-danger">Delete</a>
+                 <a data-bs-toggle="modal" data-bs-target="#delete_airport" class="btn btn-danger">Delete</a>
                </td>
              </tr>
+               <!-- Modal -->
+  <div class="modal fade" id="delete_airport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bg-light">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this airport?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <a href="/delete_airport/{{ $airports -> id }}" type="button" class="btn btn-danger">Confirm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+             @endforeach
            </tbody>
         </table>
       </div>
 </body>
 </html>
+

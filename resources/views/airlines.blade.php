@@ -11,10 +11,10 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container">
 
-    
+
 
         <div class="d-flex justify-content-center">
         <a href="new_airline" class="d-flex justify-content-center btn btn-danger" style="margin-top: 13px;">New airline</a>
@@ -24,20 +24,24 @@
         <table class="table table-bordered bg-info">
            <thead>
              <tr>
+               <th scope="col">ID</th>
                <th scope="col">Name</th>
                <th scope="col">Country</th>
                <th scope="col">Actions</th>
              </tr>
            </thead>
            <tbody>
+            @foreach ($airline as $airlines)
              <tr>
-               <th scope="row">Brexit</th>
-               <td>United Kingdom</td>
+               <th scope="row">{{ $airlines -> id }}</th>
+               <td>{{ $airlines -> airline_name }}</td>
+               <td>{{ $airlines -> country_name }}</td>
                <td>
-                 <a href="edit_airline" class="btn btn-danger">Edit</a>
-                 <a href="delete_airline" class="btn btn-warning">Delete</a>
+                 <a href="edit_airline/{{ $airlines -> id }}" class="btn btn-danger">Edit</a>
+                 <a href="delete_airline/{{ $airlines -> id }}" class="btn btn-warning">Delete</a>
                </td>
              </tr>
+             @endforeach
            </tbody>
         </table>
       </div>

@@ -15,7 +15,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-        return view('countries');
+        $country = Country::paginate('6');
+
+        return view('countries', compact('country'));
     }
 
     public function countryWithoutAirlinesAirports(){

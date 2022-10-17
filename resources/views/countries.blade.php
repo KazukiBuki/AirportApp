@@ -11,10 +11,10 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
 
-    
+
         <div class="btn-group d-flex justify-content-center" role="group">
         <div>
         <a href="/add_country" class="btn btn-danger" style="margin-top: 6px; margin-right: 3px;">New country</a>
@@ -33,20 +33,25 @@
         <table class="table table-bordered bg-info">
            <thead>
              <tr>
+               <th scope="col">ID</th>
                <th scope="col">Name</th>
                <th scope="col">Code</th>
                <th scope="col">Actions</th>
              </tr>
            </thead>
            <tbody>
-             <tr>
-               <th scope="row">Brexit</th>
-               <td>1234</td>
-               <td>
-                 <a href="/edit_country" class="btn btn-danger">Edit</a>
-                 <a href="/delete_country" class="btn btn-warning">Delete</a>
-               </td>
-             </tr>
+            @foreach ($country as $countries)
+                <tr>
+                <th scope="row">{{ $countries -> id }}</th>
+                <td>{{ $countries -> country_name }}</td>
+                <td>{{ $countries -> country_ISO }}</td>
+                <td>
+                    <a href="/edit_country/{{ $countries -> id }}" class="btn btn-danger">Edit</a>
+                    <a href="/delete_country/{{ $countries -> id }}" class="btn btn-warning">Delete</a>
+                </td>
+                </tr>
+            @endforeach
+
            </tbody>
         </table>
       </div>
