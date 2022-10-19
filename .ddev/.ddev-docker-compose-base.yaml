@@ -5,8 +5,8 @@ services:
   db:
     container_name: ddev-${DDEV_SITENAME}-db
     build:
-      context: '/home/moksleivis/Desktop/AirportApp-1/.ddev/db-build'
-      dockerfile: '/home/moksleivis/Desktop/AirportApp-1/.ddev/.dbimageBuild/Dockerfile'
+      context: '/home/moksleivis/AirportApp-1/.ddev/db-build'
+      dockerfile: '/home/moksleivis/AirportApp-1/.ddev/.dbimageBuild/Dockerfile'
       args:
         BASE_IMAGE: $DDEV_DBIMAGE
         username: 'moksleivis'
@@ -60,8 +60,8 @@ services:
   web:
     container_name: ddev-${DDEV_SITENAME}-web
     build:
-      context: '/home/moksleivis/Desktop/AirportApp-1/.ddev/web-build'
-      dockerfile: '/home/moksleivis/Desktop/AirportApp-1/.ddev/.webimageBuild/Dockerfile'
+      context: '/home/moksleivis/AirportApp-1/.ddev/web-build'
+      dockerfile: '/home/moksleivis/AirportApp-1/.ddev/.webimageBuild/Dockerfile'
       args:
         BASE_IMAGE: $DDEV_WEBIMAGE
         username: 'moksleivis'

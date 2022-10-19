@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: lightgreen;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
 <div class="d-flex justify-content-center">
     <h1>Are you sure you want to delete this airport?</h1>
@@ -20,7 +20,6 @@
         <div>
         <a href="/test" class="btn btn-success" style="margin-top: 6px; margin-right: 3px;">Yes</a>
         </div>
-
         <div>
         <a href="/test" class="btn btn-danger" style="margin-top: 6px;">No</a>
         </div>

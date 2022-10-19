@@ -9,7 +9,7 @@
     <title>AirBnB</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgreen;">
+<body style="background-color: beige;">
     @include('partials/navbar')
 
     <div class="container-fluid mt-3">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="table" style="margin-top: 13px;">
-        <table class="table table-bordered bg-warning">
+        <table class="table table-bordered bg-info">
            <thead>
              <tr>
                <th scope="col">Name</th>
@@ -54,7 +54,7 @@
                <td>{{ $airports -> longitude }}</td>
                <td>
                  <a href="/edit_airport/{{ $airports -> id }}" class="btn btn-primary">Edit</a>
-                 <a href="/add_airline" class="btn btn-info">Add airline</a>
+                 <a href="/add_airline" class="btn btn-warning">Add airline</a>
                  <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
                  <a data-bs-toggle="modal" data-bs-target="#delete_airport" class="btn btn-danger">Delete</a>
                </td>

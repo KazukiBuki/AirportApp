@@ -10,12 +10,12 @@ services:
         gid: '1002'
         uid: '1001'
         username: moksleivis
-      context: /home/moksleivis/Desktop/AirportApp-1/.ddev/db-build
-      dockerfile: /home/moksleivis/Desktop/AirportApp-1/.ddev/.dbimageBuild/Dockerfile
+      context: /home/moksleivis/AirportApp-1/.ddev/db-build
+      dockerfile: /home/moksleivis/AirportApp-1/.ddev/.dbimageBuild/Dockerfile
     command: ''
     container_name: ddev-Vejas-db
     environment:
-      COLUMNS: '194'
+      COLUMNS: '192'
       DDEV_HOSTNAME: vejas.ddev.site
       DDEV_PHP_VERSION: '7.4'
       DDEV_PRIMARY_URL: http://vejas.ddev.site
@@ -28,7 +28,7 @@ services:
       DOCKER_IP: 127.0.0.1
       HOST_DOCKER_INTERNAL_IP: 172.17.0.1
       IS_DDEV_PROJECT: "true"
-      LINES: '20'
+      LINES: '6'
       TZ: ''
     healthcheck:
       interval: 1s
@@ -39,11 +39,11 @@ services:
     image: drud/ddev-dbserver-mariadb-10.3:20201210_gotip_arm64-Vejas-built
     labels:
       com.ddev.app-type: laravel
-      com.ddev.approot: /home/moksleivis/Desktop/AirportApp-1
+      com.ddev.approot: /home/moksleivis/AirportApp-1
       com.ddev.platform: ddev
       com.ddev.site-name: Vejas
     ports:
-    - 127.0.0.1::3306/tcp
+    - 127.0.0.1:49153:3306/tcp
     restart: "no"
     stop_grace_period: 60s
     user: 1001:1002
@@ -53,7 +53,7 @@ services:
       type: volume
       volume:
         nocopy: true
-    - source: /home/moksleivis/Desktop/AirportApp-1/.ddev
+    - source: /home/moksleivis/AirportApp-1/.ddev
       target: /mnt/ddev_config
       type: bind
     - ddev-global-cache:/mnt/ddev-global-cache:rw
@@ -75,7 +75,7 @@ services:
     image: phpmyadmin:5
     labels:
       com.ddev.app-type: laravel
-      com.ddev.approot: /home/moksleivis/Desktop/AirportApp-1
+      com.ddev.approot: /home/moksleivis/AirportApp-1
       com.ddev.platform: ddev
       com.ddev.site-name: Vejas
     links:
@@ -90,13 +90,13 @@ services:
         gid: '1002'
         uid: '1001'
         username: moksleivis
-      context: /home/moksleivis/Desktop/AirportApp-1/.ddev/web-build
-      dockerfile: /home/moksleivis/Desktop/AirportApp-1/.ddev/.webimageBuild/Dockerfile
+      context: /home/moksleivis/AirportApp-1/.ddev/web-build
+      dockerfile: /home/moksleivis/AirportApp-1/.ddev/.webimageBuild/Dockerfile
     cap_add:
     - SYS_PTRACE
     container_name: ddev-Vejas-web
     environment:
-      COLUMNS: '194'
+      COLUMNS: '192'
       DDEV_DOCROOT: public
       DDEV_HOSTNAME: vejas.ddev.site
       DDEV_PHP_VERSION: '7.4'
@@ -118,7 +118,7 @@ services:
       HTTPS_EXPOSE: 443:80,8026:8025
       HTTP_EXPOSE: 80:80,8025:8025
       IS_DDEV_PROJECT: "true"
-      LINES: '20'
+      LINES: '6'
       SSH_AUTH_SOCK: /home/.ssh-agent/socket
       TZ: ''
       VIRTUAL_HOST: vejas.ddev.site
@@ -135,7 +135,7 @@ services:
     image: drud/ddev-webserver:20201229_php7.4-Vejas-built
     labels:
       com.ddev.app-type: laravel
-      com.ddev.approot: /home/moksleivis/Desktop/AirportApp-1
+      com.ddev.approot: /home/moksleivis/AirportApp-1
       com.ddev.platform: ddev
       com.ddev.site-name: Vejas
     links:
@@ -147,12 +147,12 @@ services:
     user: 1001:1002
     volumes:
     - consistency: cached
-      source: /home/moksleivis/Desktop/AirportApp-1
+      source: /home/moksleivis/AirportApp-1
       target: /var/www/html
       type: bind
-    - /home/moksleivis/Desktop/AirportApp-1/.ddev:/mnt/ddev_config:ro
-    - /home/moksleivis/Desktop/AirportApp-1/.ddev/nginx_full:/etc/nginx/sites-enabled:ro
-    - /home/moksleivis/Desktop/AirportApp-1/.ddev/apache:/etc/apache2/sites-enabled:ro
+    - /home/moksleivis/AirportApp-1/.ddev:/mnt/ddev_config:ro
+    - /home/moksleivis/AirportApp-1/.ddev/nginx_full:/etc/nginx/sites-enabled:ro
+    - /home/moksleivis/AirportApp-1/.ddev/apache:/etc/apache2/sites-enabled:ro
     - ddev-global-cache:/mnt/ddev-global-cache:rw
     - ddev-ssh-agent_socket_dir:/home/.ssh-agent:rw
 version: '3.6'
