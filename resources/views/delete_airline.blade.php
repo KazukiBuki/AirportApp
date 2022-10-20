@@ -9,9 +9,9 @@
     <title>Delete airline?</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgreen;">
+<body style="background-color: beige;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
 <div class="d-flex justify-content-center">
     <h1>Are you sure you want to delete this airline?</h1>

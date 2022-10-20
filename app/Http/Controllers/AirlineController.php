@@ -49,7 +49,7 @@ class AirlineController extends Controller
 
         $validate = $request -> validate([
             'airline_name' => 'required|max:40',
-            'country_name' => 'required',
+            'country_name' => 'required|max:20',
             // 'country_ISO' => 'required',
             // 'country_id' => 'required',
         ]);
@@ -80,6 +80,9 @@ class AirlineController extends Controller
      */
     public function show(Airline $airline)
     {
+        $airline = Airline::paginate(6);
+
+
         return view('airlines', compact('airline'));
     }
 
@@ -118,6 +121,7 @@ class AirlineController extends Controller
      */
     public function destroy(Airline $airline)
     {
-        return view('/airlines');
+        $airline -> delete();
+        return redirect('/airlines');
     }
 }

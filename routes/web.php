@@ -23,6 +23,7 @@ Route::get('/add_airport', [AirportController::class, 'create']);
 Route::get('/edit_airport/{airport}', [AirportController::class, 'edit']);
 Route::get('/delete_airport/{airport}', [AirportController::class, 'destroy']);
 Route::post('/store_airport', [AirportController::class, 'store']);
+Route::post('/update_airport/{airport}', [AirportController::class, 'update']);
 
 Route::get('/airlines', [AirlineController::class, 'index']);
 Route::get('/add_airline', [AirlineController::class, 'addAirline']);
@@ -30,12 +31,14 @@ Route::get('/edit_airline/{airline}', [AirlineController::class, 'edit']);
 Route::get('/delete_airline/{airline}', [AirlineController::class, 'destroy']);
 Route::post('/store_airline', [AirlineController::class, 'store']);
 Route::get('/new_airline', [AirlineController::class, 'create']);
+Route::post('/update_airline/{airline}', [AirlineController::class, 'update']);
 
 Route::get('/countries', [CountryController::class, 'index']);
 Route::get('/add_country', [CountryController::class, 'create']);
 Route::get('/edit_country/{country}', [CountryController::class, 'edit']);
 Route::get('/delete_country/{country}', [CountryController::class, 'destroy']);
 Route::post('/store_country', [CountryController::class, 'store']);
+Route::post('/update_country/{country}', [CountryController::class, 'update']);
 
 // Route::get('/add_country', function () {
 //     return view('add_country');

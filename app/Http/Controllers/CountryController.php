@@ -50,8 +50,8 @@ class CountryController extends Controller
     public function store(StoreCountryRequest $request)
     {
         $validate = $request -> validate([
-            'country_name' => 'required|min:4|max:50',
-            'country_ISO' => 'required|min:3|max:3',
+            'country_name' => 'required|max:20',
+            'country_ISO' => 'required|max:3',
         ]);
 
         Country::create([
@@ -95,6 +95,10 @@ class CountryController extends Controller
      */
     public function update(UpdateCountryRequest $request, Country $country)
     {
+        // $request -> validate([
+
+        // ]);
+
         Country::where('id', $country -> id)-> update($request->only(['country_name', 'country_ISO']));
         return redirect('/countries');
     }

@@ -53,7 +53,7 @@
                <td>{{ $airports -> latitude }}</td>
                <td>{{ $airports -> longitude }}</td>
                <td>
-                 <a href="/edit_airport/{{ $airports -> id }}" class="btn btn-primary">Edit</a>
+                 <a href="/edit_airport/{{ $airports -> id }}" class="btn btn-success">Edit</a>
                  <a href="/add_airline" class="btn btn-warning">Add airline</a>
                  <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
                  <a data-bs-toggle="modal" data-bs-target="#delete_airport" class="btn btn-danger">Delete</a>

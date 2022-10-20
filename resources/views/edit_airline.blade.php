@@ -9,31 +9,26 @@
     <title>Edit airline</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgreen;">
+<body style="background-color: beige;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
         <div class="text-center">
-  <h1>Let's edit this airline!</h1>
+  <h1>Lets edit this airline!</h1>
 </div>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Name</option>
-      <option selected="">Lithuania</option>
-          </select>
-  </div>
-</form>
+<form action="/update_airline/{{ $airline -> id }}" method="post">
+    @csrf
+    <div class="mb-3">
+        <label for="airline_name" class="form-label">Airline name</label>
+        <input name="airline_name" type="text" value="{{ $airline -> airline_name }}" class="form-control" id="airline_name">
+    </div>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Select airline</option>
-      <option>Lithuania</option>
-          </select>
-  </div>
-  <a href="/airlines" type="submit" class="btn btn-success">Submit</a>
+    <div class="mb-3">
+      <label for="country_name" class="form-label">Country name</label>
+      <input name="country_name" type="text" value="{{ $airline -> country_name }}" class="form-control" id="country_name">
+    </div>
+    <button type="submit" class="btn btn-success">Edit</button>
 </form>
 
       </div>

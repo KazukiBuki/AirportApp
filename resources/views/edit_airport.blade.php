@@ -9,33 +9,39 @@
     <title>Edit airport</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgreen;">
+<body style="background-color: beige;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
         <div class="text-center">
-  <h1>Let's edit this airport!</h1>
-</div>
+            <h1>Lets edit this airport!</h1>
+        </div>
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Name</option>
-      <option selected="">Lithuania</option>
-          </select>
-  </div>
-</form>
+        <form action="/update_airport/{{ $airport->id }}" method="post">
+          @csrf
 
-<form action="" method="post">
-  <input type="hidden" name="_token">  <div class="mb-3">
-    <select class="form-select " aria-label="Select airline" id="airline" name="airline">
-      <option selected="">Select country</option>
-      <option>Lithuania</option>
-          </select>
-  </div>
-  <a href="/test" type="submit" class="btn btn-success">Submit</a>
-</form>
+          <div class="mb-3">
+              <label for="airport_name" class="form-label">Airport name</label>
+              <input name="airport_name" type="text" value="{{ $airport -> airport_name }}" class="form-control" id="airport_name">
+          </div>
 
-      </div>
+          <div class="mb-3">
+            <label for="country_name" class="form-label">Country_name</label>
+            <input name="country_name" type="text" value="{{ $airport -> country_name }}" class="form-control" id="country_name">
+          </div>
+
+          <div class="mb-3">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input name="latitude" type="text" value="{{ $airport -> latitude }}" class="form-control" id="latitude">
+          </div>
+
+          <div class="mb-3">
+            <label for="longitude" class="form-label">Longitude</label>
+            <input name="longitude" type="text" value="{{ $airport -> longitude }}" class="form-control" id="longitude">
+          </div>
+
+            <button type="submit" class="btn btn-success">Edit</button>
+        </form>
+    </div>
 </body>
 </html>

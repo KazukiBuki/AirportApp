@@ -9,15 +9,16 @@
     <title>Remove airline</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgreen;">
+<body style="background-color: beige;">
     @include('partials/navbar')
-    
+
     <div class="container-fluid mt-3">
         <div class="text-center">
   <h1>Let's remove airline to a airport!</h1>
 </div>
 <hr>
 <form action="" method="post">
+    @csrf
   <input type="hidden" name="_token">  <div class="mb-3">
     <select class="form-select " aria-label="Select airline" id="airline" name="airline">
       <option selected="">Select airline</option>

@@ -50,9 +50,9 @@ class AirportController extends Controller
 
         $validate = $request-> validate([
             'airport_name' => 'required|max:40',
-            'country_name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
+            'country_name' => 'required|max:20',
+            'latitude' => 'required|max:10',
+            'longitude' => 'required|max:10',
             // 'country_id' => 'required',
         ]);
         Airport::create([
@@ -107,7 +107,8 @@ class AirportController extends Controller
      */
     public function update(UpdateAirportRequest $request, Airport $airport)
     {
-        //
+        Airport::where('id', $airport -> id)-> update($request->only(['airport_name', 'country_name', 'latitude', 'longitude']));
+        return redirect('/test');
     }
 
     /**
