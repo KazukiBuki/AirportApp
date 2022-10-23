@@ -37,11 +37,11 @@
         <table class="table table-bordered bg-info">
            <thead>
              <tr>
+               <th scope="col">ID</th>
                <th scope="col">Name</th>
                <th scope="col">Country</th>
-               <th scope="col">Location</th>
-               <th scope="col">Airlines</th>
-               <th scope="col">Actions</th>
+               <th scope="col">Latitude</th>
+               <th scope="col">Longitude</th>
              </tr>
            </thead>
            <tbody>
@@ -55,7 +55,7 @@
                <td>
                  <a href="/edit_airport/{{ $airports -> id }}" class="btn btn-success">Edit</a>
                  <a href="/add_airline" class="btn btn-warning">Add airline</a>
-                 <a href="/remove_airline" class="btn btn-secondary">Remove airline</a>
+                 {{-- <a href="/remove_airline" class="btn btn-secondary">Remove airline</a> --}}
                  <a data-bs-toggle="modal" data-bs-target="#delete_airport" class="btn btn-danger">Delete</a>
                </td>
              </tr>
